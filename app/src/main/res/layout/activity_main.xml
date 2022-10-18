@@ -6,31 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@color/background">
-    
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:id="@+id/title"
-       android:text="BMI CALCULATOR"
-       android:gravity="center"
-       android:textStyle="bold"
-       android:background="@color/heading"
-      android:layout_marginTop="20dp"
-       android:padding="10dp"
-       />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/greeting"
+        android:text="@string/greeting"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+
+        android:layout_marginTop="50dp"
+        android:padding="10dp"
+        />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/name"
-        android:layout_below="@id/title"
+        android:layout_below="@id/greeting"
         android:padding="10dp"
-        android:hint="Name"
-        android:textColorHint="@color/black"
-        android:layout_marginTop="30dp"
+        android:hint="@string/name"
+        android:textColorHint="@color/white"
+        android:layout_marginTop="80dp"
         android:layout_marginHorizontal="10dp"
-        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+        android:drawableStart="@drawable/person"
         android:drawablePadding="8dp"
-        android:background="@color/name"
+        android:background="@color/results"
+        android:inputType="textAutoComplete"
         />
     <EditText
         android:layout_width="match_parent"
@@ -38,13 +41,14 @@
         android:id="@+id/weight"
         android:layout_below="@id/name"
         android:padding="10dp"
-        android:hint="Weight (Kg)"
-        android:textColorHint="@color/black"
+        android:hint="@string/weight_kg"
+        android:textColorHint="@color/white"
         android:layout_marginTop="30dp"
         android:layout_marginHorizontal="10dp"
-        android:drawableLeft="@drawable/ic_baseline_scale_24"
+        android:drawableStart="@drawable/scale"
         android:drawablePadding="8dp"
-        android:background="@color/name"
+        android:background="@color/results"
+        android:inputType="number"
         />
     <EditText
         android:layout_width="match_parent"
@@ -52,13 +56,14 @@
         android:id="@+id/heigt"
         android:layout_below="@id/weight"
         android:padding="10dp"
-        android:hint="Height (M)"
-        android:textColorHint="@color/black"
+        android:hint="@string/height_m"
+        android:textColorHint="@color/white"
         android:layout_marginTop="30dp"
         android:layout_marginHorizontal="10dp"
-        android:drawableLeft="@drawable/ic_baseline_height_24"
+        android:drawableStart="@drawable/height"
         android:drawablePadding="8dp"
-        android:background="@color/name"
+        android:background="@color/results"
+        android:inputType="number"
 
         />
     <com.google.android.material.button.MaterialButton
@@ -66,11 +71,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/calculate"
         android:layout_below="@id/heigt"
-        android:text="CALCULATE"
+        android:text="@string/calculate"
         android:gravity="center"
         android:layout_marginHorizontal="120dp"
         android:backgroundTint="@color/heading"
         android:textColor="@color/black"
+        android:textStyle="bold"
         android:layout_marginTop="40dp"
 
         />

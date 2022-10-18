@@ -12,50 +12,37 @@ import android.widget.Toast;
 
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
-
+public class Results extends AppCompatActivity {
     Button button;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_results);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowCustomEnabled(true);
-        Objects.requireNonNull(getSupportActionBar()).setCustomView(R.layout.custom_action_bar);
+        Objects.requireNonNull(getSupportActionBar()).setCustomView(R.layout.toolbar_title);
         View view = Objects.requireNonNull(getSupportActionBar()).getCustomView();
 
-        ImageButton imageButton= (ImageButton)view.findViewById(R.id.action_bar_back);
+        ImageButton imageButton= (ImageButton)view.findViewById(R.id.action_bar_home);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-            }
-        });
-
-        ImageButton imageButton2= (ImageButton)view.findViewById(R.id.action_bar_forward);
-
-        imageButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Forward Button is clicked",Toast.LENGTH_LONG).show();
-            }
-        });
-        button = findViewById(R.id.calculate);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Results.class);
+                Intent intent = new Intent(Results.this, MainActivity.class);
                 startActivity(intent);
             }
         });
 
-    }
 
-    public void calculate (View v){
-
+        button = findViewById(R.id.back);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Results.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
