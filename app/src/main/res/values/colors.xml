@@ -12,5 +12,6 @@
     <color name="background">#111113</color>
     <color name="results">#21212157</color>
     <color name="results_bg">#21212100</color>
+    <color name="trans">#FF000000</color>
 
 </resources>
