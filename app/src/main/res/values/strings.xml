@@ -7,6 +7,7 @@
     <string name="height_m">Height (M)</string>
     <string name="weight_kg">Weight (Kg)</string>
     <string name="name">Name</string>
-
+    <string name="results_dy"> Good Morning %1$s 👋. \n Your BMI is %2$s. \n so You are %3$s.</string>
+    <string name="bmi"> Your BMI is %1$s.</string>
 
 </resources>

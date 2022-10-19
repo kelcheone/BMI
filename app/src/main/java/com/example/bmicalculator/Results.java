@@ -8,12 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Objects;
 
 public class Results extends AppCompatActivity {
     Button button;
+    TextView rText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,15 @@ public class Results extends AppCompatActivity {
             }
         });
 
+        rText = findViewById(R.id.results);
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        String rBMI = extras.getString("BMI");
+        String rStatus  = extras.getString("Status");
+        String rName = extras.getString("Name");
+        String dy_results = getString(R.string.results_dy, rName, rBMI, rStatus);
+
+        rText.setText(dy_results);
 
         button = findViewById(R.id.back);
         button.setOnClickListener(new View.OnClickListener() {
@@ -47,5 +58,8 @@ public class Results extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void calculate(View view) {
     }
 }
