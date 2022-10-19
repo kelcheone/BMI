@@ -29,15 +29,7 @@ public class Results extends AppCompatActivity {
 
         ImageButton imageButton= (ImageButton)view.findViewById(R.id.action_bar_home);
 
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(Results.this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
-        });
+        imageButton.setOnClickListener(this::onClickImg);
 
         rText = findViewById(R.id.results);
         Intent intent = getIntent();
@@ -45,21 +37,29 @@ public class Results extends AppCompatActivity {
         String rBMI = extras.getString("BMI");
         String rStatus  = extras.getString("Status");
         String rName = extras.getString("Name");
-        String dy_results = getString(R.string.results_dy, rName, rBMI, rStatus);
+        String rTime = extras.getString("Time");
+        String dy_results = getString(R.string.results_dy, rTime, rName, rBMI, rStatus);
 
         rText.setText(dy_results);
 
         button = findViewById(R.id.back);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finishAffinity();
-                Intent intent = new Intent(Results.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        button.setOnClickListener(this::onClickBtn);
     }
 
     public void calculate(View view) {
+    }
+
+    private void onClickImg(View v) {
+
+        Intent intent = new Intent(Results.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
+    private void onClickBtn(View v){
+        finishAffinity();
+        Intent intent = new Intent(Results.this, MainActivity.class);
+        startActivity(intent);
+
     }
 }

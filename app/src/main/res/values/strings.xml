@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">BMI CALCULATOR</string>
-    <string name="greeting">Good Morning 👋 </string>
+    <string name="greeting">Good %1$s 👋 </string>
     <string name="results"> Good Morning John 👋  \n Your BMI is 23. \n So you are over weight</string>
     <string name="back">BACK</string>
     <string name="calculate">CALCULATE</string>
     <string name="height_m">Height (M)</string>
     <string name="weight_kg">Weight (Kg)</string>
     <string name="name">Name</string>
-    <string name="results_dy"> Good Morning %1$s 👋. \n Your BMI is %2$s. \n so You are %3$s.</string>
+    <string name="results_dy"> Good %1$s %2$s 👋. \n Your BMI is %3$s. \n so You are %4$s.</string>
     <string name="bmi"> Your BMI is %1$s.</string>
 
 </resources>
