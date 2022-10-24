@@ -30,7 +30,7 @@ public class Results extends AppCompatActivity {
         ImageButton imageButton= (ImageButton)view.findViewById(R.id.action_bar_home);
 
         imageButton.setOnClickListener(this::onClickImg);
-
+//Displaying the results from bundle in the created in the other activity
         rText = findViewById(R.id.results);
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -41,7 +41,7 @@ public class Results extends AppCompatActivity {
         String dy_results = getString(R.string.results_dy, rTime, rName, rBMI, rStatus);
 
         rText.setText(dy_results);
-
+//Takes you back to the home Page(MainActivity)
         button = findViewById(R.id.back);
         button.setOnClickListener(this::onClickBtn);
     }
@@ -50,7 +50,7 @@ public class Results extends AppCompatActivity {
     }
 
     private void onClickImg(View v) {
-
+//Allows user to exit the current Activity to main Activity
         Intent intent = new Intent(Results.this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
